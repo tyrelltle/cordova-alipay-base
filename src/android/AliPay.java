@@ -57,6 +57,7 @@ public class AliPay extends CordovaPlugin {
             @Override
             public void run() {
                 try {
+                    EnvUtils.setEnv(EnvUtils.EnvEnum.SANDBOX);
                     Log.d(TAG, "Calling Alipay with: " + parameters);
                     PayTask task = new PayTask(cordova.getActivity());
                     // 调用支付接口，获取支付结果
